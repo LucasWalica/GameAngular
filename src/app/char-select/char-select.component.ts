@@ -44,7 +44,7 @@ export class CharSelectComponent {
   thug2 : Character = new Character ("Eliot", '../../assets/thugs/Raider_2/Walk.png', 20, 5, 
                       "Eliot is a migrant from Sudafrica with his family, he needs to survive at least 2 months more until the next evacuation process starts so he may get in touch with his family again.",
                       "Ranged", 3, "He is trained in using an assault rifle, he depends on ammunition and having his weapon in good state.")
-  thug3 : Character = new Character ("Olivian",  '../../assets/thugs/Raider_3/Walk.png', 15, 10, 
+  thug3 : Character = new Character ("Bonnie",  '../../assets/thugs/Raider_3/Walk.png', 15, 10, 
                       "Olivian was just a thug and a procurer before the pandemic started ,now, he has nothing else than a peanut brain and his old and trusty baseball bat.",
                       "Recover", 4, "He can cast his ability to recover some health this casting takes some seconds, during this time he takes x2 dmg.") 
 
