@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Character } from '../models/character.model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,9 +25,8 @@ export class CharactersService {
     "Ranged", 3, "He is trained in using an assault rifle, he depends on ammunition and having his weapon in good state."),
   new Character ("Bonnie",  '../../assets/thugs/Raider_3/Walk.png', 15, 10, 
     "Olivian was just a thug and a procurer before the pandemic started ,now, he has nothing else than a peanut brain and his old and trusty baseball bat.",
-    "Recover", 4, "He can cast his ability to recover some health this casting takes some seconds, during this time he takes x2 dmg.") 
+    "Recover", 4, "He can cast his ability to recover some health, this casting takes some seconds, during this time he takes x2 dmg.") 
   ];
-
 
   getCharacters(): Character[]{
     return this.characters;
@@ -35,6 +35,6 @@ export class CharactersService {
   getCharacterByName(name:string):Character|undefined{
     return this.characters.find(character => character.name === name);
   }
-  
+
   constructor() { }
 }

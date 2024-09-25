@@ -7,6 +7,7 @@ import { CharactersService } from '../services/characters.service';
   templateUrl: './char-select.component.html',
   styleUrls: ['./char-select.component.css']
 })
+
 export class CharSelectComponent implements OnInit {
 
   constructor(private characterService:CharactersService){}
