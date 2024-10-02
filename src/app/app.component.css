@@ -1,0 +1,7 @@
+.full_screen {
+    height: 150vh; 
+    width: 100%;  
+    background-color: black; 
+    margin: 0; 
+    padding-top: 20px;
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Character } from '../models/character.model';
-import { CharactersService } from '../services/characters.service';
+import { Character } from '../../models/character.model';
+import { CharactersService } from '../../services/characters.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-char-select',
@@ -10,18 +11,21 @@ import { CharactersService } from '../services/characters.service';
 
 export class CharSelectComponent implements OnInit {
 
-  constructor(private characterService:CharactersService){}
-
+  constructor(private characterService:CharactersService, private router:Router){}
 
   characterArray : Character[] = [];
   counter : number = 0;
   // Initialises current Character as null or undefined
-  currentSprite:Character = {} as Character;
-
+  selectedCharacter:Character = {} as Character;
 
   ngOnInit():void{
     this.characterArray = this.characterService.getCharacters();
-    this.currentSprite = this.characterArray[this.counter]
+    this.selectedCharacter = this.characterArray[this.counter]
+  }
+
+  // needs to assign select char to a selected Char
+  assignCharAndRedirectToMapSelect() {
+    this.router.navigate(['/mapSelection']);
   }
 
   goForward(){
@@ -29,7 +33,7 @@ export class CharSelectComponent implements OnInit {
     if(this.counter>=this.characterArray.length){
       this.counter=0
     }
-    this.currentSprite = this.characterArray[this.counter]
+    this.selectedCharacter = this.characterArray[this.counter]
   }
 
   goBackwards(){
@@ -37,7 +41,6 @@ export class CharSelectComponent implements OnInit {
     if(this.counter<0){
       this.counter=this.characterArray.length-1
     }
-    console.log(this.counter)
-    this.currentSprite=this.characterArray[this.counter]
+    this.selectedCharacter=this.characterArray[this.counter]
   }
 }

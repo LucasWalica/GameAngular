@@ -1,27 +1,32 @@
 <div class="border-2 border-black m-4 p-2 bg-emerald-800 rounded-md shadow-emerald-700 shadow-md lg:mr-48 lg:ml-48 robot2">
     <!--Title row-->
     <div>
-        <div></div>
-        <h1 class="text-center text-xl lg:text-2xl border-black rounded-md bg-emerald-200 text-emerald-800 border-2 p-2">
+        <h1 class="text-center text-xl lg:text-2xlborder-2 border-orange-600 rounded-md bg-orange-950 text-orange-400 p-2">
             Select your character
         </h1>
-        <div></div>
     </div>
     <!--Char row-->
     <div class="flex justify-center mt-4 m-2 rounded-md">
         <!--Col-1-->
-        <div class="text-center border-2 rounded-md border-emerald-700 bg-gray-800 h-80 w-40">
-            <div class="bg-emerald-900 rounded-md m-2 p-4 text-xl text-emerald-100 shadow-lg h-16">
-                {{currentSprite.name}}
+        <div class="text-center rounded-md p-1 bg-gray-600 h-80 w-40 flex flex-col justify-center items-center">
+            <div class="bg-emerald-900 rounded-md m-2 p-4 text-xl text-emerald-100 shadow-lg h-14">
+                {{selectedCharacter.name}}
             </div>
-            <div class="walkSprite"  [ngStyle]="{'background-image': 'url(' + currentSprite.dir + ')'}"></div>
+            <div class="walkSprite"  [ngStyle]="{'background-image': 'url(' + selectedCharacter.dir + ')'}"></div>
+            
             <div class="group rounded-sm bg-emerald-950 text-emerald-100 h-28 border-2 border-emerald-900 p-2 hover:bg-emerald-700 hover:text-emerald-950 [&>*]:hover:bg-emerald-200 [&>*]:hover:text-emerald-950">
                 Special Skill: 
                 <div class="bg-emerald-400 text-emerald-900 rounded-md h-14 flex items-center p-2 text-center">
-                    {{currentSprite.specialName}}
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-950 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-900"></span>
+                    </span>
+                    <span>
+                        {{selectedCharacter.specialName}} 
+                    </span>
                     <!--Tooltip-->
                     <div class="absolute hidden group-hover:block bg-black text-emerald-300 text-md rounded-md px-2 py-1 min-h-10 max-w-40 -translate-x-5 -translate-y-32">
-                        {{currentSprite.specialSkillDes}}
+                        {{selectedCharacter.specialSkillDes}}
                     </div>
                 </div>
             </div>
@@ -32,15 +37,15 @@
                 Description
             </h1>
             <div class="text-center content-center mt-2 m-4 text-sm md:text-base lg:text-xl lg:max-w-4xl md:max-w-4xl h-48">
-                {{currentSprite.desc}}
+                {{selectedCharacter.desc}}
             </div>
             <!--Row hp dmg-->
             <div class="flex justify-center bg-emerald-400 rounded-md p-1">
                 <div class="border-2 m-2 w-1/2 pl-4 pr-4 border-blue-800 text-blue-200 bg-blue-950 p-2 rounded-md text-sm">
-                    dmg: {{currentSprite.dmg}}
+                    dmg: {{selectedCharacter.dmg}}
                 </div>
                 <div class="border-2 m-2 w-1/2 pl-4 pr-4 border-red-800 text-red-200 bg-red-950 p-2 rounded-md text-sm">
-                    HP: {{currentSprite.hp}}
+                    HP: {{selectedCharacter.hp}}
                 </div>
             </div>
         </div>
@@ -48,13 +53,16 @@
     <!--Button Row-->
     <div class="grid grid-cols-1 mx-auto pt-2">
         <div class="grid grid-cols-3 gap-2 text-center">
-            <a (click)="goBackwards()" class="border-2 border-lime-300 rounded-md py-2 px-4 bg-lime-200 text-center hover:bg-lime-500 cursor-pointer hover:text-lime-300 active:bg-lime-800 active:text-lime-200">
+            <a (click)="goBackwards()" class="p-2 pl-4 pr-4 border-2 border-orange-600 rounded-md bg-orange-950 text-orange-400 
+            hover:bg-orange-500 hover:text-orange-950 duration-250 cursor-pointer">
                 Previous
             </a>
-            <a class="border-2 border-lime-300 rounded-md py-2 px-4 bg-lime-200 text-center hover:bg-lime-500 cursor-pointer hover:text-lime-300 active:bg-lime-800 active:text-lime-200">
+            <a (click)="assignCharAndRedirectToMapSelect()" class="p-2 pl-4 pr-4 border-2 border-orange-600 rounded-md bg-orange-950 text-orange-400 
+            hover:bg-orange-500 hover:text-orange-950 duration-250 cursor-pointer">
                 Select
             </a>
-            <a (click)="goForward()" class="border-2 border-lime-300 rounded-md py-2 px-4 bg-lime-200 text-center hover:bg-lime-500 cursor-pointer hover:text-lime-300 active:bg-lime-800 active:text-lime-200">
+            <a (click)="goForward()" class="p-2 pl-4 pr-4 border-2 border-orange-600 rounded-md bg-orange-950 text-orange-400 
+            hover:bg-orange-500 hover:text-orange-950 duration-250 cursor-pointer">
                 Next
             </a>
         </div>

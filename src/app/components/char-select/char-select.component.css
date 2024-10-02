@@ -1,5 +1,5 @@
 .walkSprite{
-    background: url('../../assets/homeles/Homeless_1/Walk.png');
+    background: url('../../../assets/homeles/Homeless_1/Walk.png');
     height: 128px;
     width: 128px;
     animation: homelesAndThugWalk steps(8) 2.5s infinite;
