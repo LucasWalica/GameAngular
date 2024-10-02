@@ -8,7 +8,8 @@ export class Character {
     specialID : number
     specialSkillDes:string
   
-    constructor(name:string, dir:string, dmg:number, hp:number, desc:string, specialName:string, specialID:number, specialSkillDes:string) {
+    constructor(name:string, dir:string, dmg:number, hp:number, desc:string,
+    specialName:string, specialID:number, specialSkillDes:string) {
       this.name = name 
       this.dir = dir
       this.dmg = dmg 

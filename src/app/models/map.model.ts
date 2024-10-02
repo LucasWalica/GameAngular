@@ -1,5 +1,5 @@
 export class Map{
-
+    // add hp for the industrial zone and zombie population or something.
     name:string;
     dir:string;
     desc:string;
