@@ -96,7 +96,8 @@
           "builder": "angular-cli-ghpages:deploy",
           "options":{
             "repo": "https://github.com/LucasWalica/GameAngular.git",
-            "branch":"gh-pages"
+            "branch":"gh-pages",
+            "createNoJekyllFile": true
           }
         }
       }
