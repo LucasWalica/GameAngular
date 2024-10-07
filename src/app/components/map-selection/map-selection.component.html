@@ -16,14 +16,14 @@
         </div>
     </div>
     <div *ngIf="selectedMap.name" class="flex flex-col items-center justify-center p-2 m-2 rounded-md bg-emerald-800">
-        <div class="border-2 border-orange-950 bg-orange-900 pl-2 pr-2 p-1 text-orange-300 text-2xl rounded-md shadow-sm shadow-black">
+        <div class="border-2 border-orange-950 bg-orange-900 pl-2 pr-2 p-1 text-orange-300 text-2xl rounded-md shadow-sm shadow-black mb-2">
             <h1>{{selectedMap.name}}</h1>
         </div>
-        <div class="md:flex md:flex-row lg:flex lg:flex-row 2xl:grid 2xl:grid-cols-1">
+        <div class="md:flex md:flex-row lg:flex lg:flex-row justify-center items-center 2xl:grid 2xl:grid-cols-1">
             <!--img row-->
             <div class="rounded-md m-auto flex justify-center items-center">
                 <div class="h-52 w-52 sm:h-60 sm:w-60 mb-4 flex justify-center items-center">
-                    <div class="cityImg rounded-md m-2 2xl:shadow-md 2xl:shadow-black" [ngStyle]="{'background-image': 'url('+selectedMap.dir+')'}"></div>
+                    <div class="cityImg rounded-md m-2" [ngStyle]="{'background-image': 'url('+selectedMap.dir+')'}"></div>
                 </div>
             </div>
                 <!--Desc row-->
