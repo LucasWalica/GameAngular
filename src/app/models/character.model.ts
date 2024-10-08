@@ -19,4 +19,9 @@ export class Character {
       this.specialID = specialID
       this.specialSkillDes = specialSkillDes
     }
+
+
+    getName(){
+      return this.name;
+    }
   }

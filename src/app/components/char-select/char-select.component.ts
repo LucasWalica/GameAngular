@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../../models/character.model';
 import { CharactersService } from '../../services/characters.service';
+import { StorageServiceService } from 'src/app/services/storage-service.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class CharSelectComponent implements OnInit {
 
-  constructor(private characterService:CharactersService, private router:Router){}
+  constructor(private characterService:CharactersService, private storageService:StorageServiceService ,private router:Router){}
 
   characterArray : Character[] = [];
   counter : number = 0;
@@ -23,8 +24,8 @@ export class CharSelectComponent implements OnInit {
     this.selectedCharacter = this.characterArray[this.counter]
   }
 
-  // needs to assign select char to a selected Char
-  assignCharAndRedirectToMapSelect() {
+  assignCharAndRedirectToMapSelect(character:Character) {
+    this.storageService.saveCharacter(character);
     this.router.navigate(['/mapSelection']);
   }
 

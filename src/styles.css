@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
     font-family: robot1;
     src: url('./assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf');
@@ -15,4 +16,17 @@
 }
 .robot2{
     font-family: robot2;
+}
+
+.walkSprite{
+    background: url('./assets/homeles/Homeless_1/Walk.png');
+    height: 128px;
+    width: 128px;
+    animation: homelesAndThugWalk steps(8) 2.5s infinite;
+}
+
+
+@keyframes homelesAndThugWalk {
+    from{background-position: 0px;}
+    to{background-position: -1024px;}
 }
