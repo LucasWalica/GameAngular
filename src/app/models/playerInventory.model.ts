@@ -22,15 +22,17 @@ export class Inventory{
     }
 }
 
-class Item{
+export class Item{
     id:number;
     name:string;
     price:number;
+    timesInInventory:number;
 
-    constructor(id:number, name:string, price:number){
+    constructor(id:number, name:string, price:number, timesInInventory:number){
         this.id=id;
         this.name=name;
         this.price=price;
+        this.timesInInventory=timesInInventory;
     }
 
     getId(){
@@ -51,6 +53,10 @@ class Item{
     setPrice(price:number){
         this.price=price;
     }
+    getTimesInInventory(){
+        return this.timesInInventory;
+    }
+    setTimesInInvory(times:number){
+        this.timesInInventory = times;
+    }
 }
-
-
